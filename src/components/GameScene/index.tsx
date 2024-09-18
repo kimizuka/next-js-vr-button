@@ -154,7 +154,9 @@ export function GameScene() {
     scene.add(controllerB);
 
     camera.position.set(0, 1.7, 0);
-    camera.lookAt(new Vector3(cube.position.x, cube.position.y, cube.position.z));
+    camera.lookAt(
+      new Vector3(cube.position.x, cube.position.y, cube.position.z),
+    );
 
     scene.add(camera);
 
