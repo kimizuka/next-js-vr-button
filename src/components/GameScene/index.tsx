@@ -16,9 +16,6 @@ import {
   WebGLRenderer,
 } from 'three';
 import { ARButton } from 'three/addons/webxr/ARButton.js';
-import { XRControllerModelFactory } from 'three/examples/jsm/webxr/XRControllerModelFactory.js';
-
-const controllerModelFactory = new XRControllerModelFactory();
 
 export function GameScene() {
   const { width, height } = useWindowSize();
