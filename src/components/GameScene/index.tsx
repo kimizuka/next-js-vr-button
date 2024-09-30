@@ -15,7 +15,7 @@ import {
   Vector3,
   WebGLRenderer,
 } from 'three';
-import { VRButton } from 'three/addons/webxr/VRButton.js';
+import { ARButton } from 'three/addons/webxr/ARButton.js';
 import { XRControllerModelFactory } from 'three/examples/jsm/webxr/XRControllerModelFactory.js';
 
 const controllerModelFactory = new XRControllerModelFactory();
@@ -90,7 +90,7 @@ export function GameScene() {
       new MeshNormalMaterial(),
     );
 
-    cube.position.set(0, 1.5, -1);
+    cube.position.set(0, .5, -1);
     cube.geometry.computeBoundingSphere();
 
     const cubeHit = new Sphere(
@@ -121,10 +121,6 @@ export function GameScene() {
     );
     const controllerA = renderer.xr.getController(0);
     const controllerB = renderer.xr.getController(1);
-    const controllerModelA =
-      controllerModelFactory.createControllerModel(controllerA);
-    const controllerModelB =
-      controllerModelFactory.createControllerModel(controllerB);
 
     sphereA.geometry.computeBoundingSphere();
     sphereB.geometry.computeBoundingSphere();
@@ -144,10 +140,7 @@ export function GameScene() {
     sphereB.material.transparent = true;
     sphereB.material.opacity = 0.4;
 
-    controllerA.add(controllerModelA);
     controllerA.add(sphereA);
-
-    controllerB.add(controllerModelB);
     controllerB.add(sphereB);
 
     scene.add(controllerA);
@@ -176,7 +169,7 @@ export function GameScene() {
       }
     });
 
-    document.body.appendChild(VRButton.createButton(renderer));
+    document.body.appendChild(ARButton.createButton(renderer));
 
     renderer.setAnimationLoop(() => {
       renderer.render(scene, camera);
