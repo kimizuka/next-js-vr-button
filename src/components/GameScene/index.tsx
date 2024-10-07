@@ -1,17 +1,23 @@
 'use client';
 
 import { createStore } from '@/scripts/store';
+import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { XR } from '@react-three/xr';
 import { useState } from 'react';
+import styles from './index.module.scss';
 
 export function GameScene() {
   const [store] = useState(createStore());
 
   return (
-    <>
-      <button type="button" onClick={() => store?.enterAR()}>
-        Enter AR
+    <div className={styles.wrapper}>
+      <button
+        className={styles.button}
+        type="button"
+        onClick={() => store?.enterVR()}
+      >
+        Enter VR
       </button>
       <Canvas>
         {store && (
@@ -27,7 +33,8 @@ export function GameScene() {
             </mesh>
           </XR>
         )}
+        <OrbitControls />
       </Canvas>
-    </>
+    </div>
   );
 }

@@ -12,6 +12,7 @@
     "update": "ncu -u"
   },
   "dependencies": {
+    "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.7",
     "@react-three/xr": "^6.2.8",
     "next": "14.2.12",
@@ -27,6 +28,7 @@
     "@types/react-dom": "^18",
     "@types/three": "^0.168.0",
     "npm-check-updates": "^17.1.2",
+    "sass": "^1.79.4",
     "typescript": "^5"
   }
 }
