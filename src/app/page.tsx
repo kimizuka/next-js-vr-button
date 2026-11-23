@@ -1,5 +1,5 @@
-import { GameScene } from '@/components/GameScene';
+import { ClockScene } from '@/components/ClockScene';
 
 export default function IndexPage() {
-  return <GameScene />;
+  return <ClockScene />;
 }
